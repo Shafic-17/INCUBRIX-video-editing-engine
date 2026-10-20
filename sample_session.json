@@ -1,0 +1,18 @@
+{
+  "video_id": "replace-with-uploaded-video-id",
+  "duration_s": 120,
+  "steps": [
+    {
+      "say": "Add a caption 'Welcome!'"
+    },
+    {
+      "say": "Cut the first 30 seconds"
+    },
+    {
+      "say": "Undo"
+    },
+    {
+      "say": "Redo"
+    }
+  ]
+}

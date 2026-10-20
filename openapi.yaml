@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: IncuBrix Prompt-Based Video Editing Engine MVP
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is running
+  /ready:
+    get:
+      summary: Readiness check
+      responses:
+        "200":
+          description: Service is ready
+  /api/v1/videos:
+    post:
+      summary: Upload MP4 or MOV video
+      responses:
+        "200":
+          description: Video stored
+  /api/v1/sessions:
+    post:
+      summary: Create editing session
+      responses:
+        "200":
+          description: Session created
+  /api/v1/sessions/{session_id}/instructions:
+    post:
+      summary: Apply an instruction
+      parameters:
+        - in: path
+          name: session_id
+          required: true
+          schema: {type: string}
+      responses:
+        "200":
+          description: Instruction result
+  /api/v1/sessions/{session_id}/timeline:
+    get:
+      summary: Get timeline
+      parameters:
+        - in: path
+          name: session_id
+          required: true
+          schema: {type: string}
+      responses:
+        "200":
+          description: Current timeline
